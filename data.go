@@ -11,10 +11,7 @@ import (
 	"time"
 )
 
-/*
-  Generate a key from https://www.alphavantage.co/
-*/
-var key = "<KEY_NEEDED>"
+var key = "<API KEY>"
 
 /*
 Time Series Data Struc
@@ -118,29 +115,60 @@ type ESVolumeWeightedAveragePrice struct {
 }
 
 /*
- Stock struc to be sent to ES
+ Stock struc to store data for SMA. Data is moved here before being send to ES
+to ease the load on ES. Un required data points are stripped out before uploading to ES
  */
-type Stock struct {
+ type SMAData struct {
+ 	Data []SMA
+ }
+
+type SMA struct {
+
 	/*
 	From Time Series
-	 */
-	Date string
-	Open float64
-	Close float64
-	High float64
-	Low float64
-	Volume float64
+	*/
+	Date   string
+	Open   float32
+	Close  float32
+	High   float32
+	Low    float32
+	Volume float32
 
 	/*
-	From Simple Moving Av
-	 */
-	 SimpleMovingAv float64
+	From Simple Moving Av - 50 Day
+	*/
+	SMA50Day float32
 
-	 /*
-	From ExponentialMoving Av
-	 */
-	ExponentialMovingAv float64
+	/*
+	From Simple Moving Av - 15 Day
+	*/
+	SMA15Day float32
 }
+
+/*
+Get the data set for SMA data
+ */
+ func getSMAData(ts TimeSeries, sma50 SimpleMovingAv, sma15 SimpleMovingAv) (*SMAData, error){
+
+ 	var smaData SMAData
+ 	var sma SMA
+
+ 	for date,data := range ts.Data {
+ 		sma.Date = date
+ 		sma.Open = data.Open
+ 		sma.Close = data.Close
+ 		sma.High = data.High
+ 		sma.Low = data.Low
+ 		sma.Volume = data.Volume
+ 		sma.SMA50Day = sma50.Data[date].Value
+ 		sma.SMA15Day = sma15.Data[date].Value
+
+ 		smaData.Data = append(smaData.Data, sma)
+	}
+
+ 	return  &smaData, nil
+
+ }
 
 /*
 	http client for api calls
@@ -156,7 +184,7 @@ func getTimeSeries(symbol string) (*TimeSeries, error) {
 
 	url := "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" +
 		symbol +
-		"&outputsize=full&apikey=" +
+		"&apikey=" +
 		key
 
 	r, err := myClient.Get(url)
@@ -184,7 +212,7 @@ func getSimpleMovingAv(symbol string, window int) (*SimpleMovingAv, error) {
 		symbol +
 		"&interval=daily&time_period=" +
 		strconv.Itoa(window) +
-		"&series_type=close&outputsize=full&apikey=" +
+		"&series_type=close&apikey=" +
 		key
 
 	r, err := myClient.Get(url)
@@ -212,7 +240,7 @@ func getExponentialMovingAv(symbol string, window int) (*ExponentialMovingAv, er
 		symbol +
 		"&interval=daily&time_period=" +
 		strconv.Itoa(window) +
-		"&series_type=close&outputsize=full&apikey=" +
+		"&series_type=close&apikey=" +
 		key
 
 	r, err := myClient.Get(url)
@@ -228,54 +256,6 @@ func getExponentialMovingAv(symbol string, window int) (*ExponentialMovingAv, er
 
 	return target, nil
 }
-
-/*
-	Process Time Series, Simple Moving Average & Exponential Moving Average
-	to return a stock object
- */
- /*
-func getStock(ts *TimeSeries, sma *SimpleMovingAv, ema *SimpleMovingAv) (*[]Stock, error) {
-
-		Loop through Time Series, match the dates and
-		pull the matching values from SMA and EMA
-
-
-	 stock_data := new([]Stock)
-	 var e error
-
-	 for ts_date, ts_data := range ts.Data {
-
-		s := new(Stock)
-
-		s.Date = ts_date
-
-		s.Volume,e = strconv.ParseFloat(ts_data.Volume, 64)
-		 handle(e)
-
-		s.Open,e = strconv.ParseFloat(ts_data.Open, 64)
-		 handle(e)
-
-		s.Close,e = strconv.ParseFloat(ts_data.Close, 64)
-		 handle(e)
-
-		s.High,e = strconv.ParseFloat(ts_data.High, 64)
-		 handle(e)
-
-		s.Low,e = strconv.ParseFloat(ts_data.Low, 64)
-		 handle(e)
-
-		s.SimpleMovingAv,e = strconv.ParseFloat(sma.Data[ts_date].Value, 64)
-		 handle(e)
-
-		s.ExponentialMovingAv,e = strconv.ParseFloat(ema.Data[ts_date].Value, 64)
-		handle(e)
-
-		*stock_data = append(*stock_data, *s)
-	 }
-
-	 return stock_data, nil
-}
-*/
 
 func EsPut(index string, b *[]byte, sem *chan int ) error {
 	uri := "http://localhost:9200" + index
@@ -370,6 +350,38 @@ Send the different data types to ES
 
 type Sender interface {
 	Send(index_name string, concurrency int) error
+}
+
+func (smaData *SMAData) Send (index_name string, concurrency int ) error {
+
+	/*
+	Used for output of each Marshaled json
+ 	*/
+	var b []byte
+	var err error
+
+	/*
+	Channel to manage concurrent processes
+	 */
+	c := make(chan int, concurrency)
+
+	indexCount := 0
+	for _,d := range smaData.Data {
+
+		b,err = json.Marshal(d)
+		fmt.Println(string(b))
+		if err != nil {
+			return err
+		}
+
+		c <- 0
+		i := index_name + strconv.Itoa(indexCount)
+		go EsPut(i, &b, &c)
+		indexCount++
+	}
+
+	return nil
+
 }
 
 func (ts *TimeSeries) Send( index_name string, concurrency int ) error {

@@ -23,6 +23,7 @@ favourites:
     symbol: ECSC.LON
   - name: Earthport Plc
     symbol: EPO.LON
+second:
   - name: Electronic Arts Inc.
     symbol: EA
   - name: Emergent Biosolutions Inc
