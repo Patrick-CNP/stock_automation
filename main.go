@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 	"strings"
+	"time"
 )
 
 type fav_symbols struct {
@@ -131,6 +132,9 @@ func from_yaml(){
 		 */
 		err = createSMAVisualisation(g.Symbol, g.Name)
 		handle(err)
+
+		// pause to let ES catchup
+		time.Sleep(60 * time.Second)
 	}
 }
 
@@ -161,6 +165,6 @@ func newVis(){
 }
 
 func main()  {
-	from_arg()
-	//from_yaml()
+	//from_arg()
+	from_yaml()
 }

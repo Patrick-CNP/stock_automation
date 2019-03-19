@@ -11,6 +11,8 @@ services:
       memlock:
         soft: -1
         hard: -1
+    volumes:
+    - esdata1:/usr/share/elasticsearch/data
     ports:
     - 9200:9200
     networks:
@@ -19,10 +21,18 @@ services:
     image: docker.elastic.co/kibana/kibana:6.6.1
     environment:
       ELASTICSEARCH_HOSTS: http://elasticsearch::9200
+    volumes:
+    - kibanadata1:/usr/share/kibana/data
     ports:
       - "5601:5601"
     networks:
       - elk
+
+volumes:
+  esdata1:
+    driver: local
+  kibanadata1:
+    driver: local
 
 networks:
   elk:

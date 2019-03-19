@@ -11,7 +11,7 @@ import (
 	"time"
 )
 
-var key = "<API KEY>"
+var key = "<KEY HERE>"
 
 /*
 Time Series Data Struc
