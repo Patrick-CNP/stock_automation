@@ -6,15 +6,24 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"os"
 	"strconv"
 	"strings"
 	"time"
 )
 
-var key = "<KEY HERE>"
+/*
+API Struct
+ */
+ type Api struct {
+ 	StockData struct{
+ 		Url string `json:"url"`
+ 		ApiKey string `json:"api_key"`
+	} `json:"stock_data"`
+ }
 
 /*
-Time Series Data Struc
+Time Series Data Struct
  */
 type TimeSeries struct {
 	MetaData struct {
@@ -145,6 +154,36 @@ type SMA struct {
 	SMA15Day float32
 }
 
+ /*
+ Get the api data
+  */
+  func getAPIData(fileName string) (*Api){
+
+  	/*
+  	Open
+  	 */
+  	apiFile,err := os.Open(fileName)
+  	handle(err)
+
+  	defer apiFile.Close()
+
+	  /*
+  		Read
+  	 */
+	  byteValue,err := ioutil.ReadAll(apiFile)
+	  handle(err)
+
+  	 /*
+  	 Unmarshal
+  	  */
+  	  apiData := new(Api)
+	  err = json.Unmarshal(byteValue, apiData)
+	  handle(err)
+
+  	  return apiData
+
+  }
+
 /*
 Get the data set for SMA data
  */
@@ -171,9 +210,14 @@ Get the data set for SMA data
  }
 
 /*
-	http client for api calls
+	http client for api calls to ES
  */
 var myClient = &http.Client{Timeout: 10 * time.Second}
+
+/*
+	API data for the stock data
+ */
+var apiData = getAPIData("api.json")
 
 /*
  	Get the Time Series Data
@@ -182,10 +226,10 @@ func getTimeSeries(symbol string) (*TimeSeries, error) {
 
 	target := new(TimeSeries)
 
-	url := "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" +
+	url := apiData.StockData.Url + "/query?function=TIME_SERIES_DAILY&symbol=" +
 		symbol +
 		"&apikey=" +
-		key
+		apiData.StockData.ApiKey
 
 	r, err := myClient.Get(url)
 	if err != nil {
@@ -208,12 +252,12 @@ func getSimpleMovingAv(symbol string, window int) (*SimpleMovingAv, error) {
 
 	target := new(SimpleMovingAv)
 
-	url := "https://www.alphavantage.co/query?function=SMA&symbol=" +
+	url := apiData.StockData.Url + "/query?function=SMA&symbol=" +
 		symbol +
 		"&interval=daily&time_period=" +
 		strconv.Itoa(window) +
 		"&series_type=close&apikey=" +
-		key
+		apiData.StockData.ApiKey
 
 	r, err := myClient.Get(url)
 	if err != nil {
@@ -236,12 +280,12 @@ func getExponentialMovingAv(symbol string, window int) (*ExponentialMovingAv, er
 
 	target := new(ExponentialMovingAv)
 
-	url := "https://www.alphavantage.co/query?function=SMA&symbol=" +
+	url := apiData.StockData.Url + "/query?function=SMA&symbol=" +
 		symbol +
 		"&interval=daily&time_period=" +
 		strconv.Itoa(window) +
 		"&series_type=close&apikey=" +
-		key
+		apiData.StockData.ApiKey
 
 	r, err := myClient.Get(url)
 	if err != nil {
