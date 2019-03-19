@@ -6,7 +6,6 @@ import (
 	"io/ioutil"
 	"os"
 	"strings"
-	"time"
 )
 
 type fav_symbols struct {
@@ -88,8 +87,8 @@ func from_arg(){
 	/*
 	The symbol to pull data for
 	*/
-	stock_symbol := os.Args[1]
-	stock_name := os.Args[2]
+	stock_symbol := os.Args[2]
+	stock_name := os.Args[3]
 
 	/*
 	run the stock
@@ -110,32 +109,40 @@ func from_arg(){
 
 }
 
-func from_yaml(){
+func from_yaml(symbolsFile string){
 	var s fav_symbols
-	err := s.symbols("symbols.yml")
+	err := s.symbols(symbolsFile)
 	handle(err)
+	var symbols []string
 
 	for _,g := range s.Group{
 		fmt.Println(g.Symbol)
 		/*
 		run the stock
 	 	*/
-		es(g.Symbol)
+		//es(g.Symbol)
+
 		/*
 		Index
  		*/
-		err := createIndex(g.Symbol)
-		handle(err)
+		//err := createIndex(g.Symbol)
+		//handle(err)
 
 		/*
 		Vis
 		 */
-		err = createSMAVisualisation(g.Symbol, g.Name)
-		handle(err)
+		//err = createSMAVisualisation(g.Symbol, g.Name)
+		//handle(err)
+
+		symbols = append(symbols, g.Symbol)
 
 		// pause to let ES catchup
-		time.Sleep(60 * time.Second)
+		//time.Sleep(60 * time.Second)
 	}
+
+	err = createDashBoard("My Test Moving Av", &symbols)
+	handle(err)
+
 }
 
 func newIndex(){
@@ -165,6 +172,10 @@ func newVis(){
 }
 
 func main()  {
-	//from_arg()
-	from_yaml()
+	switch os.Args[1] {
+	case "symbol":
+		from_arg()
+	default:
+		from_yaml(os.Args[1])
+	}
 }

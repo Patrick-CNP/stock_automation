@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -14,7 +15,7 @@ Standard post to ES
  */
 func post(url string, b *[]byte) error {
 
-	uri := "http://localhost:5601/" + url
+	uri := "http://localhost:5601/" + url + "?overwrite=true"
 
 	client := &http.Client{}
 	client.Timeout = time.Second * 15
@@ -98,4 +99,54 @@ Send a request to create a SMA visualisation for each symbol
 
 	 return nil
 
+ }
+
+ func createDashBoard(name string, symbols *[]string) error {
+
+ 	/*
+ 	Create the panels string
+ 	 */
+ 	 panels := `"panelsJSON": "[`
+ 	 panelIndex := 1
+ 	 panel := ""
+ 	 for _,symbol := range *symbols {
+
+ 	 	panel = `{\"gridData\":{\"w\":24,\"h\":15,\"x\":0,\"y\":0,\"i\":\"1\"},\"version\":\"6.6.1\",\"panelIndex\":\"` +
+			strconv.Itoa(panelIndex) +
+ 	 		`\",\"type\":\"visualization\",\"id\":\"` +
+ 	 		symbol +
+ 	 		`\",\"embeddableConfig\":{}},`
+
+ 	 	panels += panel
+ 	 	panelIndex += 1
+ 	 	}
+	panels = panels[:len(panels)-1]
+	panels = panels + `]",`
+
+ 	/*
+ 		Create the dashboard
+ 	 */
+ 	 dash_id := strings.ToLower(strings.Replace(name, " ", "-", -1))
+	 /*
+ 	 dashBoard := `{"type": "dashboard","id": "` +
+		 dash_id +
+		 `","attributes": {"title": "` +
+		 name +
+		 `"}}`
+	 */
+	 dashBoard := `{"attributes": {"title": "` +
+	 	name +
+	 	`",` +
+		panels +
+		`"optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}"}}`
+
+	 body := []byte(dashBoard)
+	 url :=  "api/saved_objects/dashboard/" + dash_id
+
+	 err := post(url, &body)
+	 if err != err{
+		 return err
+	 }
+
+ 	return nil
  }

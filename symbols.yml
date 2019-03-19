@@ -1,4 +1,4 @@
-favourites2:
+favourites:
   - name: AUMANN AG
     symbol: AUUMF
   - name: AUSTRALIAN VANADIUM LTD
@@ -35,7 +35,6 @@ favourites2:
     symbol: HMSY
   - name: Hurricain
     symbol: HUR.LON
-favourites:
   - name: IPG Photonics Corp
     symbol: IPGP
   - name: IQIYI
@@ -90,3 +89,11 @@ favourites:
     symbol: WDAY
   - name: Walt Disney
     symbol: DIS
+current:
+- name: Petrofac Ltd
+  symbol: PFC.LON
+- name: Entertainment One
+  symbol: ETO.LON
+- name: IQIYI
+  symbol: IQ
+
