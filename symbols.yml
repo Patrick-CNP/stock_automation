@@ -1,99 +1,104 @@
-favourites:
-  - name: AUMANN AG
-    symbol: AUUMF
-  - name: AUSTRALIAN VANADIUM LTD
-    symbol: ATVVF
-  - name: Acacia Mining
-    symbol: ACA.LON
-  - name: BP
-    symbol: BP.LON
-  - name: Bushveld Minerals
-    symbol: BMN.LON
-  - name: Casey’s General Stores
-    symbol: CASY
-  - name: Codexis Inc
-    symbol: CDXS
-  - name: Constellium
-    symbol: CSTM
-  - name: DHX MEDIA LTD
-    symbol: DHXM
-  - name: ECSC GROUP
-    symbol: ECSC.LON
-  - name: Earthport Plc
-    symbol: EPO.LON
-  - name: Electronic Arts Inc.
-    symbol: EA
-  - name: Emergent Biosolutions Inc
-    symbol: EBS
-  - name: Ensign Group Inc/The
-    symbol: ENSG
-  - name: Entertainment One
-    symbol: ETO.LON
-  - name: Greggs
-    symbol: GRG.LON
-  - name: HMS Holdings Corp
-    symbol: HMSY
-  - name: Hurricain
-    symbol: HUR.LON
-  - name: IPG Photonics Corp
-    symbol: IPGP
-  - name: IQIYI
-    symbol: IQ
-  - name: Ilika Plc
-    symbol: IKA.LON
-  - name: Keller Group Plc
-    symbol: KLR.LON
-  - name: LHC Group Inc
-    symbol: LHCG
-  - name: Lloyds Banking Group
-    symbol: LLOY.LON
-  - name: MICRO FOCUS INTERNATIONAL
-    symbol: MFGP
-  - name: Moneysupermarket.com Group Plc
-    symbol: MONY.LON
-  - name: OHR PHARMACEUTICAL IN
-    symbol: OHRP
-  - name: Ocado Ltd
-    symbol: OCDO.LON
-  - name: Oracle Corp
-    symbol: ORCL
-  - name: Petrofac Ltd
-    symbol: PFC.LON
-  - name: Ryanair Holdings
-    symbol: RYA.LON
-  - name: SONOS INC
-    symbol: SONO
-  - name: SPOTIFY TECHNOLOGY
-    symbol: SPOT
-  - name: Sage Group
-    symbol: SGE.LON
-  - name: Seattle Genetics
-    symbol: SGEN
-  - name: Smurfit Kappa Group Plc
-    symbol: SMFKY
-  - name: Stericycle
-    symbol: SRCL
-  - name: Tesla
-    symbol: TSLA
-  - name: Tungsten Corp
-    symbol: TUNG.LON
-  - name: Unilever
-    symbol: ULVR.LON
-  - name: VISTEON CORPORATION CO
-    symbol: VC
-  - name: Vodafone
-    symbol: VOD.LON
-  - name: WANdisco
-    symbol: WAND.LON
-  - name: WORKDAY INC-CLASS A
-    symbol: WDAY
-  - name: Walt Disney
-    symbol: DIS
-current:
-- name: Petrofac Ltd
-  symbol: PFC.LON
-- name: Entertainment One
-  symbol: ETO.LON
-- name: IQIYI
-  symbol: IQ
+groups:
+  - favourites:
+    - name: AUMANN AG
+      symbol: AUUMF
+    - name: AUSTRALIAN VANADIUM LTD
+      symbol: ATVVF
+    - name: Acacia Mining
+      symbol: ACA.LON
+    - name: BP
+      symbol: BP.LON
+    - name: Bushveld Minerals
+      symbol: BMN.LON
+    - name: Casey’s General Stores
+      symbol: CASY
+    - name: Codexis Inc
+      symbol: CDXS
+    - name: Constellium
+      symbol: CSTM
+    - name: DHX MEDIA LTD
+      symbol: DHXM
+    - name: ECSC GROUP
+      symbol: ECSC.LON
+    - name: Earthport Plc
+      symbol: EPO.LON
+    - name: Electronic Arts Inc.
+      symbol: EA
+    - name: Emergent Biosolutions Inc
+      symbol: EBS
+    - name: Ensign Group Inc/The
+      symbol: ENSG
+    - name: Entertainment One
+      symbol: ETO.LON
+    - name: Greggs
+      symbol: GRG.LON
+    - name: HMS Holdings Corp
+      symbol: HMSY
+    - name: Hurricain
+      symbol: HUR.LON
+    - name: IPG Photonics Corp
+      symbol: IPGP
+    - name: IQIYI
+      symbol: IQ
+    - name: Ilika Plc
+      symbol: IKA.LON
+    - name: Keller Group Plc
+      symbol: KLR.LON
+    - name: Kingfisher
+      symbol: KGF.LON
+    - name: LHC Group Inc
+      symbol: LHCG
+    - name: Lloyds Banking Group
+      symbol: LLOY.LON
+    - name: MICRO FOCUS INTERNATIONAL
+      symbol: MFGP
+    - name: Moneysupermarket.com Group Plc
+      symbol: MONY.LON
+    - name: OHR PHARMACEUTICAL IN
+      symbol: OHRP
+    - name: Ocado Ltd
+      symbol: OCDO.LON
+    - name: Oracle Corp
+      symbol: ORCL
+    - name: Petrofac Ltd
+      symbol: PFC.LON
+    - name: Pz Cussons
+      symbol: PZC.LON
+    - name: Ryanair Holdings
+      symbol: RYA.LON
+    - name: SONOS INC
+      symbol: SONO
+    - name: SPOTIFY TECHNOLOGY
+      symbol: SPOT
+    - name: Sage Group
+      symbol: SGE.LON
+    - name: Seattle Genetics
+      symbol: SGEN
+    - name: Smurfit Kappa Group Plc
+      symbol: SMFKY
+    - name: Stericycle
+      symbol: SRCL
+    - name: Tesla
+      symbol: TSLA
+    - name: Tungsten Corp
+      symbol: TUNG.LON
+    - name: Unilever
+      symbol: ULVR.LON
+    - name: VISTEON CORPORATION CO
+      symbol: VC
+    - name: Vodafone
+      symbol: VOD.LON
+    - name: WANdisco
+      symbol: WAND.LON
+    - name: WORKDAY INC-CLASS A
+      symbol: WDAY
+    - name: Walt Disney
+      symbol: DIS
+  - current:
+    - name: Petrofac Ltd
+      symbol: PFC.LON
+    - name: Entertainment One
+      symbol: ETO.LON
+    - name: IQIYI
+      symbol: IQ
 

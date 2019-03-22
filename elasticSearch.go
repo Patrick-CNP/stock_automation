@@ -109,16 +109,25 @@ Send a request to create a SMA visualisation for each symbol
  	 panels := `"panelsJSON": "[`
  	 panelIndex := 1
  	 panel := ""
+ 	 y_pos := 0
+ 	 height := 15
  	 for _,symbol := range *symbols {
 
- 	 	panel = `{\"gridData\":{\"w\":24,\"h\":15,\"x\":0,\"y\":0,\"i\":\"1\"},\"version\":\"6.6.1\",\"panelIndex\":\"` +
+ 	 	panel = `{\"gridData\":{\"w\":47,\"h\":` +
+ 	 		strconv.Itoa(height) +
+ 	 		`,\"x\":0,\"y\":` +
+ 	 		strconv.Itoa(y_pos) +
+ 	 		`,\"i\":\"` +
+ 	 		strconv.Itoa(panelIndex) +
+ 	 		`\"},\"version\":\"6.6.1\",\"panelIndex\":\"` +
 			strconv.Itoa(panelIndex) +
  	 		`\",\"type\":\"visualization\",\"id\":\"` +
- 	 		symbol +
+			strings.ToLower(symbol) +
  	 		`\",\"embeddableConfig\":{}},`
 
  	 	panels += panel
  	 	panelIndex += 1
+ 	 	y_pos += height
  	 	}
 	panels = panels[:len(panels)-1]
 	panels = panels + `]",`
@@ -127,18 +136,12 @@ Send a request to create a SMA visualisation for each symbol
  		Create the dashboard
  	 */
  	 dash_id := strings.ToLower(strings.Replace(name, " ", "-", -1))
-	 /*
- 	 dashBoard := `{"type": "dashboard","id": "` +
-		 dash_id +
-		 `","attributes": {"title": "` +
-		 name +
-		 `"}}`
-	 */
+
 	 dashBoard := `{"attributes": {"title": "` +
 	 	name +
 	 	`",` +
 		panels +
-		`"optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}"}}`
+		`"optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}","version": 1,"timeRestore": false,"kibanaSavedObjectMeta": {"searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"}}}`
 
 	 body := []byte(dashBoard)
 	 url :=  "api/saved_objects/dashboard/" + dash_id

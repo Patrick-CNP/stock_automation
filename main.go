@@ -6,28 +6,29 @@ import (
 	"io/ioutil"
 	"os"
 	"strings"
+	"time"
 )
 
-type fav_symbols struct {
-	Group []struct{
-		Name string `yaml:"name"`
-		Symbol string `yaml:"symbol"`
-	} `yaml:"favourites"`
+type Symbol struct {
+	Name string `yaml:"name"`
+	Symbol string `yaml:"symbol"`
 }
 
-func (symbols *fav_symbols) symbols(yml string) (error){
+type SymbolGroups struct {
+	Groups []map[string][]Symbol `yaml:"groups"`
+}
+
+func (s *SymbolGroups) symbols(yml string) (error){
 	/*
-	Read stock symbols from the yaml file provided
-	and populate the provided struct with them
+		Read stock symbols from the yaml file provided
+		and populate the provided struct with them
 	 */
 	yamlFile,err := ioutil.ReadFile(yml)
 	if err != nil {
 		return err
 	}
 
-	//fmt.Println(string(yamlFile))
-
-	err = yaml.Unmarshal(yamlFile, symbols)
+	err = yaml.Unmarshal(yamlFile, s)
 	if err != nil{
 		return err
 	}
@@ -45,36 +46,30 @@ func es(stock_symbol string){
 	var index_name string
 
 	/*
-	Time Series
+		Time Series
 	 */
 	 ts,err := getTimeSeries(stock_symbol)
 	 handle(err)
 	 index_name = index_name_prefix + "-ts" + index_field
-	 //err = ts.Send(index_name, 10)
-	 //handle(err)
 
 	 /*
-	 Simple Moving Av 50 Day Av
+	 	Simple Moving Av 50 Day Av
 	  */
 	sma50, err := getSimpleMovingAv(stock_symbol, 50)
 	handle(err)
 	index_name = index_name_prefix + "-sma50" + index_field
-	//err = sma50.Send(index_name, 10)
-	//handle(err)
 
 	/*
-	Simple Moving Av 15 Day Av
+		Simple Moving Av 15 Day Av
  	*/
 	sma15, err := getSimpleMovingAv(stock_symbol, 15)
 	handle(err)
 	index_name = index_name_prefix + "-sma15" + index_field
-	//err = sma15.Send(index_name, 10)
-	//handle(err)
 
 	/*
-	Convert the data to an SMAData object to send to ES
-	The raw data is too much for ES to handle with lots of
-	symbols.
+		Convert the data to an SMAData object to send to ES
+		The raw data is too much for ES to handle with lots of
+		symbols.
 	 */
 	 smaData,err := getSMAData(*ts,*sma50, *sma15)
 	 handle(err)
@@ -85,24 +80,24 @@ func es(stock_symbol string){
 
 func from_arg(){
 	/*
-	The symbol to pull data for
+		The symbol to pull data for
 	*/
 	stock_symbol := os.Args[2]
 	stock_name := os.Args[3]
 
 	/*
-	run the stock
+		Run the stock
 	 */
 	es(stock_symbol)
 
 	/*
-	Index
+		Index
 	 */
 	err := createIndex(stock_symbol)
 	handle(err)
 
 	/*
-	Vis
+		Vis
 	 */
 	err = createSMAVisualisation(stock_symbol, stock_name)
 	handle(err)
@@ -110,64 +105,67 @@ func from_arg(){
 }
 
 func from_yaml(symbolsFile string){
-	var s fav_symbols
+	var s SymbolGroups
 	err := s.symbols(symbolsFile)
 	handle(err)
-	var symbols []string
 
-	for _,g := range s.Group{
-		fmt.Println(g.Symbol)
-		/*
-		run the stock
-	 	*/
-		//es(g.Symbol)
+	for _,group := range s.Groups{
+		for groupName,symbols := range group {
+			if groupName == "favourites" {
+				for _,ea := range symbols {
+					fmt.Println(groupName)
+					/*
+					Run the stock
+					*/
+					es(ea.Symbol)
 
-		/*
-		Index
- 		*/
-		//err := createIndex(g.Symbol)
-		//handle(err)
+					/*
+					Index
+					*/
+					err := createIndex(ea.Symbol)
+					handle(err)
 
+					/*
+					Vis
+					*/
+					err = createSMAVisualisation(ea.Symbol, ea.Name)
+					handle(err)
+
+					/*
+					Pause to let ES catchup
+					*/
+					time.Sleep(60 * time.Second)
+				}
+			}
+		}
+
+	}
+
+	/*
+		Create the dashboards
+ 	*/
+	dashboards_from_yaml(symbolsFile)
+
+}
+
+func dashboards_from_yaml(symbolsFile string){
+	var s SymbolGroups
+	err := s.symbols(symbolsFile)
+	handle(err)
+	var groupSymbols []string
+
+	for _,group := range s.Groups{
+		for groupName,symbols := range group {
+			for _,ea := range symbols {
+				groupSymbols = append(groupSymbols, ea.Symbol )
+			}
+			err = createDashBoard(groupName, &groupSymbols)
+			handle(err)
+		}
 		/*
-		Vis
+			Empty the symbols array
 		 */
-		//err = createSMAVisualisation(g.Symbol, g.Name)
-		//handle(err)
-
-		symbols = append(symbols, g.Symbol)
-
-		// pause to let ES catchup
-		//time.Sleep(60 * time.Second)
-	}
-
-	err = createDashBoard("My Test Moving Av", &symbols)
-	handle(err)
-
-}
-
-func newIndex(){
-
-	var s fav_symbols
-	err := s.symbols("symbols.yml")
-	handle(err)
-
-	for _,g := range s.Group {
-		fmt.Println(g.Name)
-		err := createIndex(g.Symbol)
-		handle(err)
-	}
-}
-
-func newVis(){
-
-	var s fav_symbols
-	err := s.symbols("symbols.yml")
-	handle(err)
-
-	for _,g := range s.Group {
-		fmt.Println(g.Name)
-		err := createSMAVisualisation(g.Symbol, g.Name)
-		handle(err)
+		groupSymbols = nil
 	}
 }
 
