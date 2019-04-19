@@ -36,7 +36,7 @@ func (s *SymbolGroups) symbols(yml string) (error){
 	return nil
 }
 
-func es(stock_symbol string){
+func es(stock_symbol string) error{
 
 	/*
 	ES index prefix and field to use
@@ -49,21 +49,30 @@ func es(stock_symbol string){
 		Time Series
 	 */
 	 ts,err := getTimeSeries(stock_symbol)
-	 handle(err)
+	 if err != nil {
+		 time.Sleep(60 * time.Second)
+		 return err
+	 }
 	 index_name = index_name_prefix + "-ts" + index_field
 
 	 /*
 	 	Simple Moving Av 50 Day Av
 	  */
 	sma50, err := getSimpleMovingAv(stock_symbol, 50)
-	handle(err)
+	if err != nil {
+		time.Sleep(60 * time.Second)
+		return err
+	}
 	index_name = index_name_prefix + "-sma50" + index_field
 
 	/*
 		Simple Moving Av 15 Day Av
  	*/
 	sma15, err := getSimpleMovingAv(stock_symbol, 15)
-	handle(err)
+	if err != nil {
+		time.Sleep(60 * time.Second)
+		return err
+	}
 	index_name = index_name_prefix + "-sma15" + index_field
 
 	/*
@@ -76,6 +85,7 @@ func es(stock_symbol string){
 	 err = smaData.Send(index_name, 10)
 	 handle(err)
 
+	 return nil
 }
 
 func from_arg(){
@@ -104,20 +114,23 @@ func from_arg(){
 
 }
 
-func from_yaml(symbolsFile string){
+func from_yaml(symbolsFile string, section string){
 	var s SymbolGroups
 	err := s.symbols(symbolsFile)
 	handle(err)
 
 	for _,group := range s.Groups{
 		for groupName,symbols := range group {
-			if groupName == "favourites" {
+			if groupName == section {
 				for _,ea := range symbols {
 					fmt.Println(groupName)
 					/*
 					Run the stock
 					*/
-					es(ea.Symbol)
+					err = es(ea.Symbol)
+					if err != nil {
+						continue
+					}
 
 					/*
 					Index
@@ -173,7 +186,9 @@ func main()  {
 	switch os.Args[1] {
 	case "symbol":
 		from_arg()
+	case "dashonly":
+		dashboards_from_yaml(os.Args[2])
 	default:
-		from_yaml(os.Args[1])
+		from_yaml(os.Args[1], os.Args[2])
 	}
 }

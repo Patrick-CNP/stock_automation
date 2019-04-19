@@ -1,8 +1,8 @@
-package main
+package utils
 
 import "log"
 
-func handle(e error){
+func HandleErr(e error){
 	if e != nil {
 		log.Fatal(e)
 	}

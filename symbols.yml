@@ -1,5 +1,5 @@
 groups:
-  - favourites:
+  - fav:
     - name: AUMANN AG
       symbol: AUUMF
     - name: AUSTRALIAN VANADIUM LTD
@@ -36,6 +36,10 @@ groups:
       symbol: HMSY
     - name: Hurricain
       symbol: HUR.LON
+    - name: Intel Corp
+      symbol: INTC
+    - name: Ilika plc
+      symbol: IKA.LON
     - name: IPG Photonics Corp
       symbol: IPGP
     - name: IQIYI
@@ -54,6 +58,8 @@ groups:
       symbol: MFGP
     - name: Moneysupermarket.com Group Plc
       symbol: MONY.LON
+    - name: NetEase Inc
+      symbol: NTES
     - name: OHR PHARMACEUTICAL IN
       symbol: OHRP
     - name: Ocado Ltd
@@ -68,6 +74,8 @@ groups:
       symbol: RYA.LON
     - name: SONOS INC
       symbol: SONO
+    - name: Sports Direct International 
+      symbol": SPD.LON
     - name: SPOTIFY TECHNOLOGY
       symbol: SPOT
     - name: Sage Group
@@ -80,6 +88,8 @@ groups:
       symbol: SRCL
     - name: Tesla
       symbol: TSLA
+    - name: TUI
+      symbol: TUI.LON
     - name: Tungsten Corp
       symbol: TUNG.LON
     - name: Unilever
@@ -94,11 +104,447 @@ groups:
       symbol: WDAY
     - name: Walt Disney
       symbol: DIS
-  - current:
-    - name: Petrofac Ltd
-      symbol: PFC.LON
-    - name: Entertainment One
-      symbol: ETO.LON
+  - holding:
+    - name: Ryanair Holdings
+      symbol: RYA.LON
+    - name: VISTEON CORPORATION CO
+      symbol: VC
+    - name: Ilika Plc
+      symbol: IKA.LON
     - name: IQIYI
       symbol: IQ
-
+    - name: Pz Cussons
+      symbol: PZC.LON
+  - watching:
+    - name: Carnival Corporation & plc
+      symbol: CCL.LON
+    - name: Coca-Cola HBC
+      symbol: CCH.LON
+    - name: easyJet
+      symbol: EZJ.LON
+    - name: International Airlines Group
+      symbol: IAG.LON
+    - name: ITV plc
+      symbol: ITV.LON
+    - name: NMC Health
+      symbol: NMC.LON
+    - name: Persimmon plc
+      symbol: PSN.LON
+    - name: Ryanair Holdings
+      symbol: RYA.LON
+    - name: Petrofac Ltd
+      symbol: PFC.LON
+    - name: SONOS INC
+      symbol: SONO
+    - name: TUI
+      symbol: TUI.LON
+    - name: Entertainment One
+      symbol: ETO.LON
+  - ftse100:
+    - name: 3i
+      symbol: III.LON
+    - name: Admiral Group 
+      symbol: ADM.LON
+    - name: Anglo American plc 
+      symbol: AAL.LON
+    - name: Antofagasta 
+      symbol: ANTO.LON
+    - name: Ashtead Group 
+      symbol: AHT.LON
+    - name: Associated British Foods 
+      symbol: ABF.LON
+    - name: AstraZeneca 
+      symbol: AZN.LON
+    - name: Auto Trader Group 
+      symbol: AUTO.LON
+    - name: Aviva 
+      symbol: AV.LON
+    - name: BAE Systems 
+      symbol: BA.LON
+    - name: Barclays 
+      symbol: BARC.LON
+    - name: Barratt Developments 
+      symbol: BDEV.LON
+    - name: Berkeley Group Holdings 
+      symbol: BKG.LON
+    - name: BHP 
+      symbol: BHP.LON
+    - name: BP 
+      symbol: BP.LON
+    - name: British American Tobacco 
+      symbol: BATS.LON
+    - name: British Land 
+      symbol: BLND.LON
+    - name: BT Group 
+      symbol: BT-A.LON
+    - name: Bunzl 
+      symbol: BNZL.LON
+    - name: Burberry 
+      symbol: BRBY.LON
+    - name: Carnival Corporation & plc 
+      symbol: CCL.LON
+    - name: Centrica 
+      symbol: CNA.LON
+    - name: Coca-Cola HBC 
+      symbol: CCH.LON
+    - name: Compass Group 
+      symbol: CPG.LON
+    - name: CRH plc 
+      symbol: CRH.LON
+    - name: Croda International 
+      symbol: CRDA.LON
+    - name: DCC plc 
+      symbol: DCC.LON
+    - name: Diageo 
+      symbol: DGE.LON
+    - name: Direct Line Group 
+      symbol: DLG.LON
+    - name: easyJet 
+      symbol: EZJ.LON
+    - name: Evraz 
+      symbol: EVR.LON
+    - name: Experian 
+      symbol: EXPN.LON
+    - name: Ferguson plc 
+      symbol: FERG.LON
+    - name: Fresnillo plc 
+      symbol: FRES.LON
+    - name: GlaxoSmithKline 
+      symbol: GSK.LON
+    - name: Glencore 
+      symbol: GLEN.LON
+    - name: Halma 
+      symbol: HLMA.LON
+    - name: Hargreaves Lansdown 
+      symbol: HL.LON
+    - name: Hikma Pharmaceuticals 
+      symbol: HIK.LON
+    - name: Hiscox 
+      symbol: HSX.LON
+    - name: HSBC 
+      symbol: HSBA.LON
+    - name: Imperial Brands 
+      symbol: IMB.LON
+    - name: Informa 
+      symbol: INF.LON
+    - name: InterContinental Hotels Group 
+      symbol: IHG.LON
+    - name: International Airlines Group 
+      symbol: IAG.LON
+    - name: Intertek 
+      symbol: ITRK.LON
+    - name: ITV plc 
+      symbol: ITV.LON
+    - name: Johnson Matthey 
+      symbol: JMAT.LON
+    - name: Just Eat 
+      symbol: JE.LON
+    - name: Kingfisher plc 
+      symbol: KGF.LON
+    - name: Land Securities 
+      symbol: LAND.LON
+    - name: Legal & General 
+      symbol: LGEN.LON
+    - name: Lloyds Banking Group 
+      symbol: LLOY.LON
+    - name: London Stock Exchange Group 
+      symbol: LSE.LON
+    - name: Marks & Spencer 
+      symbol: MKS.LON
+    - name: Melrose Industries 
+      symbol: MRO.LON
+    - name: Micro Focus 
+      symbol: MCRO.LON
+    - name: Mondi 
+      symbol: MNDI.LON
+    - name: Morrisons 
+      symbol: MRW.LON
+    - name: National Grid plc 
+      symbol: NG.LON
+    - name: Next plc 
+      symbol: NXT.LON
+    - name: NMC Health 
+      symbol: NMC.LON
+    - name: Ocado 
+      symbol: OCDO.LON
+    - name: Paddy Power Betfair 
+      symbol: PPB.LON
+    - name: Pearson plc 
+      symbol: PSON.LON
+    - name: Persimmon plc 
+      symbol: PSN.LON
+    - name: Phoenix Group 
+      symbol: PHNX.LON
+    - name: Prudential plc 
+      symbol: PRU.LON
+    - name: Reckitt Benckiser 
+      symbol: RB.LON
+    - name: RELX 
+      symbol: REL.LON
+    - name: Rentokil Initial 
+      symbol: RTO.LON
+    - name: Rio Tinto Group 
+      symbol: RIO.LON
+    - name: Rightmove 
+      symbol: RMV.LON
+    - name: Rolls-Royce Holdings 
+      symbol: RR.LON
+    - name: Royal Bank of Scotland Group 
+      symbol: RBS.LON
+    - name: Royal Dutch Shell 
+      symbol: RDSA.LON
+    - name: RSA Insurance Group 
+      symbol: RSA.LON
+    - name: Sage Group 
+      symbol: SGE.LON
+    - name: Sainsbury's 
+      symbol: SBRY.LON
+    - name: Schroders 
+      symbol: SDR.LON
+    - name: Scottish Mortgage Investment Trust 
+      symbol: SMT.LON
+    - name: Segro 
+      symbol: SGRO.LON
+    - name: Severn Trent 
+      symbol: SVT.LON
+    - name: Smith & Nephew 
+      symbol: SN.LON
+    - name: Smith, D.S. 
+      symbol: SMDS.LON
+    - name: Smiths Group 
+      symbol: SMIN.LON
+    - name: Smurfit Kappa 
+      symbol: SKG.LON
+    - name: Spirax-Sarco Engineering 
+      symbol: SPX.LON
+    - name: SSE plc 
+      symbol: SSE.LON
+    - name: Standard Chartered 
+      symbol: STAN.LON
+    - name: Standard Life Aberdeen 
+      symbol: SLA.LON
+    - name: St. James's Place plc 
+      symbol: STJ.LON
+    - name: Taylor Wimpey 
+      symbol: TW.LON
+    - name: Tesco 
+      symbol: TSCO.LON
+    - name: TUI Group 
+      symbol: TUI.LON
+    - name: Unilever 
+      symbol: ULVR.LON
+    - name: United Utilities 
+      symbol: UU.LON
+    - name: Vodafone Group 
+      symbol: VOD.LON
+    - name: Whitbread 
+      symbol: WTB.LON
+    - name: WPP plc 
+      symbol: WPP.LON
+  - nasdaq:
+    - name: Activision Blizzard 
+      symbol: ATVI
+    - name: Adobe Inc. 
+      symbol: ADBE
+    - name: Advanced Micro Devices 
+      symbol: AMD
+    - name: Alexion Pharmaceuticals 
+      symbol: ALXN
+    - name: Align Technology, Inc. 
+      symbol: ALGN
+    - name: Alphabet Inc. 
+      symbol: GOOGL
+    - name: Alphabet Inc. 
+      symbol: GOOG
+    - name: Amazon.com, Inc. 
+      symbol: AMZN
+    - name: American Airlines Group 
+      symbol: AAL
+    - name: Amgen Inc. 
+      symbol: AMGN
+    - name: Analog Devices 
+      symbol: ADI
+    - name: Apple Inc. 
+      symbol: AAPL
+    - name: Applied Materials, Inc. 
+      symbol: AMAT
+    - name: ASML Holding 
+      symbol: ASML
+    - name: Autodesk, Inc. 
+      symbol: ADSK
+    - name: Automatic Data Processing, Inc. 
+      symbol: ADP
+    - name: Biogen, Inc 
+      symbol: BIIB
+    - name: BioMarin Pharmaceutical, Inc. 
+      symbol: BMRN
+    - name: Booking Holdings 
+      symbol: BKNG
+    - name: Broadcom Inc. 
+      symbol: AVGO
+    - name: Cadence Design Systems, Inc. 
+      symbol: CDNS
+    - name: Celgene Corporation 
+      symbol: CELG
+    - name: Cerner Corporation 
+      symbol: CERN
+    - name: Charter Communications, Inc. 
+      symbol: CHTR
+    - name: Check Point Software Technologies Ltd. 
+      symbol: CHKP
+    - name: Cintas Corporation 
+      symbol: CTAS
+    - name: Cisco Systems, Inc. 
+      symbol: CSCO
+    - name: Citrix Systems, Inc. 
+      symbol: CTXS
+    - name: Cognizant Technology Solutions Corporation 
+      symbol: CTSH
+    - name: Comcast Corporation 
+      symbol: CMCSA
+    - name: Costco Wholesale Corporation 
+      symbol: COST
+    - name: CSX Corporation 
+      symbol: CSX
+    - name: Ctrip International 
+      symbol: CTRP
+    - name: Dollar Tree, Inc. 
+      symbol: DLTR
+    - name: eBay Inc. 
+      symbol: EBAY
+    - name: Electronic Arts 
+      symbol: EA
+    - name: Expedia Group 
+      symbol: EXPE
+    - name: Facebook, Inc. 
+      symbol: FB
+    - name: Fastenal Company 
+      symbol: FAST
+    - name: Fiserv, Inc. 
+      symbol: FISV
+    - name: Fox Corporation 
+      symbol: FOX
+    - name: Fox Corporation 
+      symbol: FOXA
+    - name: Gilead Sciences, Inc. 
+      symbol: GILD
+    - name: Hasbro, Inc. 
+      symbol: HAS
+    - name: Henry Schein, Inc. 
+      symbol: HSIC
+    - name: IDEXX Laboratories, Inc. 
+      symbol: IDXX
+    - name: Illumina, Inc. 
+      symbol: ILMN
+    - name: Incyte Corporation 
+      symbol: INCY
+    - name: Intel Corporation 
+      symbol: INTC
+    - name: Intuit, Inc. 
+      symbol: INTU
+    - name: Intuitive Surgical Inc. 
+      symbol: ISRG
+    - name: J.B. Hunt Transport Services, Inc. 
+      symbol: JBHT
+    - name: JD.com 
+      symbol: JD
+    - name: KLA-Tencor Corporation 
+      symbol: KLAC
+    - name: Lam Research, Inc. 
+      symbol: LRCX
+    - name: Liberty Global 
+      symbol: LBTYA
+    - name: Liberty Global 
+      symbol: LBTYK
+    - name: Lululemon athletica 
+      symbol: LULU
+    - name: Marriott International, Inc. 
+      symbol: MAR
+    - name: Maxim Integrated Products 
+      symbol: MXIM
+    - name: MercadoLibre 
+      symbol: MELI
+    - name: Microchip Technology 
+      symbol: MCHP
+    - name: Micron Technology, Inc. 
+      symbol: MU
+    - name: Microsoft Corporation 
+      symbol: MSFT
+    - name: Mondelēz International 
+      symbol: MDLZ
+    - name: Mylan N.V. 
+      symbol: MYL
+    - name: NetApp 
+      symbol: NTAP
+    - name: NetEase, Inc. 
+      symbol: NTES
+    - name: Netflix 
+      symbol: NFLX
+    - name: News Corp 
+      symbol: NWS
+    - name: News Corp 
+      symbol: NWSA
+    - name: NVIDIA Corporation 
+      symbol: NVDA
+    - name: O'Reilly Automotive, Inc. 
+      symbol: ORLY
+    - name: PACCAR Inc. 
+      symbol: PCAR
+    - name: Paychex, Inc. 
+      symbol: PAYX
+    - name: PayPal Holdings, Inc. 
+      symbol: PYPL
+    - name: PepsiCo, Inc. 
+      symbol: PEP
+    - name: Pinduoduo Inc. 
+      symbol: PDD
+    - name: QUALCOMM Incorporated 
+      symbol: QCOM
+    - name: Regeneron Pharmaceuticals 
+      symbol: REGN
+    - name: Ross Stores Inc. 
+      symbol: ROST
+    - name: Sirius XM Radio, Inc. 
+      symbol: SIRI
+    - name: Skyworks Solutions, Inc. 
+      symbol: SWKS
+    - name: Starbucks Corporation 
+      symbol: SBUX
+    - name: Symantec Corporation 
+      symbol: SYMC
+    - name: Synopsys, Inc. 
+      symbol: SNPS
+    - name: T-Mobile US 
+      symbol: TMUS
+    - name: Take-Two Interactive, Inc. 
+      symbol: TTWO
+    - name: Tesla, Inc. 
+      symbol: TSLA
+    - name: Texas Instruments, Inc. 
+      symbol: TXN
+    - name: The Kraft Heinz Company 
+      symbol: KHC
+    - name: Ulta Beauty 
+      symbol: ULTA
+    - name: United Continental Holdings 
+      symbol: UAL
+    - name: VeriSign 
+      symbol: VRSN
+    - name: Verisk Analytics 
+      symbol: VRSK
+    - name: Vertex Pharmaceuticals 
+      symbol: VRTX
+    - name: Viacom 
+      symbol: VIA
+    - name: Viacom 
+      symbol: VIAB
+    - name: Western Digital 
+      symbol: WDC
+    - name: Willis Towers Watson 
+      symbol: WLTW
+    - name: Wynn Resorts 
+      symbol: WYNN
+    - name: Xcel Energy, Inc. 
+      symbol: XEL
+    - name: Xilinx, Inc. 
+      symbol: XLNX 
