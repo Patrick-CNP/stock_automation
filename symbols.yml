@@ -547,4 +547,710 @@ groups:
     - name: Xcel Energy, Inc. 
       symbol: XEL
     - name: Xilinx, Inc. 
-      symbol: XLNX 
+      symbol: XLNX
+  - ftse_aim:
+    - name: ABDynamicsplc
+      symbol: ABDP.LON
+    - name: Abcamplc
+      symbol: ABC.LON
+    - name: AccessoTechnologyGroupplc
+      symbol: ACSO.LON
+    - name: AdvancedMedicalSolutionsGroupplc
+      symbol: AMS.LON
+    - name: AlliancePharmaPlc
+      symbol: APH.LON
+    - name: AlphaFinancialMarketsConsultingPlc
+      symbol: AFM.LON
+    - name: AlphaFXGroupplc
+      symbol: AFX.LON
+    - name: AndrewsSykesGroupplc
+      symbol: ASY.LON
+    - name: Applegreenplc
+      symbol: APGN.LON
+    - name: ArbuthnotBankingGroupplc
+      symbol: ARBB.LON
+    - name: ASOSplc
+      symbol: ASC.LON
+    - name: AtalayaMiningplc
+      symbol: ATYM.LON
+    - name: BenchmarkHoldingsplc
+      symbol: BMK.LON
+    - name: BluePrismplc
+      symbol: PRSM.LON
+    - name: BokuInc
+      symbol: BOKU.LON
+    - name: BoohooGroupplc
+      symbol: BOO.LON
+    - name: BreedonGroupplc
+      symbol: BREE.LON
+    - name: BrooksMacdonaldGroup
+      symbol: BRK.LON
+    - name: BurfordCapitalLtd
+      symbol: BUR.LON
+    - name: BushveldMineralsLtd
+      symbol: BMN.LON
+    - name: Camellia
+      symbol: CAM.LON
+    - name: CaretechHoldingsplc
+      symbol: CTH.LON
+    - name: CentralAsiaMetals
+      symbol: CAML.LON
+    - name: ClinigenGroupplc
+      symbol: CLIN.LON
+    - name: CodemastersGroupHoldingsLimited
+      symbol: CDM.LON
+    - name: Cranewareplc
+      symbol: CRW.LON
+    - name: CreoMedicalGroupPlc
+      symbol: CREO.LON
+    - name: CrystalAmberFundLtd
+      symbol: CRS.LON
+    - name: CVSGroupplc
+      symbol: CVSG.LON
+    - name: DartGroupplc
+      symbol: DTG.LON
+    - name: DiversifiedGas&OilPlc
+      symbol: DGOC.LON
+    - name: dotDigitalGroupplc
+      symbol: DOTD.LON
+    - name: DraperEspritplc
+      symbol: GROW.LON
+    - name: EcoAnimalHealthGroupplc
+      symbol: EAH.LON
+    - name: EddieStobartLogisticsplc
+      symbol: ESL.LON
+    - name: ElandOil&Gasplc
+      symbol: ELA.LON
+    - name: EmisGroupPlc
+      symbol: EMIS.LON
+    - name: FevertreeDrinksplc
+      symbol: FEVR.LON
+    - name: FirstDerivativesPlc
+      symbol: FDP.LON
+    - name: Focusriteplc
+      symbol: TUNE.LON
+    - name: FrontierDevelopmentsplc
+      symbol: FDEV.LON
+    - name: GammaCommunicationsLtd
+      symbol: GAMA.LON
+    - name: GBGroupplc
+      symbol: GBG.LON
+    - name: GlobalDataplc
+      symbol: DATA.LON
+    - name: Gooch&Housego
+      symbol: GHH.LON
+    - name: GreencoatRenewablesplc
+      symbol: GRP.LON
+    - name: HighlandGoldMining
+      symbol: HGM.LON
+    - name: HorizonDiscoveryGroupplc
+      symbol: HZD.LON
+    - name: HotelChocolatGroupplc
+      symbol: HOTC.LON
+    - name: HurricaneEnergyplc
+      symbol: HUR.LON
+    - name: HutchisonChinaMeditech
+      symbol: HCM.LON
+    - name: IdeagenPlc
+      symbol: IDEA.LON
+    - name: IGDesignGroupplc
+      symbol: IGR.LON
+    - name: ImpaxAssetManagementGroupPlc
+      symbol: IPX.LON
+    - name: ImpellamGroupplc
+      symbol: IPEL.LON
+    - name: IomartGroup
+      symbol: IOM.LON
+    - name: IQEplc
+      symbol: IQE.LON
+    - name: JamesHalsteadplc
+      symbol: JHD.LON
+    - name: JohnsonServiceGroupplc
+      symbol: JSG.LON
+    - name: JoulesGroupplc
+      symbol: JOUL.LON
+    - name: KeywordsStudiosplc
+      symbol: KWS.LON
+    - name: LearningTechnologiesGroupplc
+      symbol: LTG.LON
+    - name: LoopUpGroupplc
+      symbol: LOOP.LON
+    - name: MPEvansGroupPlc
+      symbol: MPE.LON
+    - name: M&CSaatchi
+      symbol: SAA.LON
+    - name: MajesticWinePLC
+      symbol: WINE.LON
+    - name: MidwichGroupplc
+      symbol: MIDW.LON
+    - name: MortgageAdviceBureau(Holdings)Ltd
+      symbol: MAB1.LON
+    - name: NextFifteenCommunicationsGroup
+      symbol: NFC.LON
+    - name: Nicholsplc
+      symbol: NICL.LON
+    - name: NumisCorporation
+      symbol: NUM.LON
+    - name: OakleyCapitalInvestmentsLtd
+      symbol: OCI.LON
+    - name: PolarCapitalHoldingsPlc
+      symbol: POLR.LON
+    - name: PremierAssetManagementGroupPlc
+      symbol: PAM.LON
+    - name: PurpleBricksGroupplc
+      symbol: PURP.LON
+    - name: Quixantplc
+      symbol: QXT.LON
+    - name: Randall&QuilterInvestmentHoldingsLtd
+      symbol: RQIH.LON
+    - name: Reddeplc
+      symbol: REDD.LON
+    - name: RenewHoldingsPlc
+      symbol: RNWH.LON
+    - name: RestorePlc
+      symbol: RST.LON
+    - name: RWSHoldingsplc
+      symbol: RWS.LON
+    - name: SafeChargeInternationalGroupLimited
+      symbol: SCH.LON
+    - name: SavannahPetroleumplc
+      symbol: SAVP.LON
+    - name: ScapaGroupplc
+      symbol: SCPA.LON
+    - name: SecureIncomeREITplc
+      symbol: SIR.LON
+    - name: SericaEnergyPlc
+      symbol: SQZ.LON
+    - name: SmartMeteringSystemsplc
+      symbol: SMS.LON
+    - name: SomeroEnterprisesInc
+      symbol: SOM.LON
+    - name: StafflineGroup
+      symbol: STAF.LON
+    - name: StrixGroupplc
+      symbol: KETL.LON
+    - name: SumoGroup
+      symbol: SUMO.LON
+    - name: Team17GroupPlc
+      symbol: TM17.LON
+    - name: TelfordHomes
+      symbol: TEF.LON
+    - name: Thorpe(F.W)plc
+      symbol: TFW.LON
+    - name: Victoriaplc
+      symbol: VCP.LON
+    - name: Wandiscoplc
+      symbol: WAND.LON
+    - name: WatkinJonesplc
+      symbol: WJG.LON
+    - name: YouGovPlc
+      symbol: YOU.LON
+    - name: Young&Co'sBreweryPlc
+      symbol: YNGA.LON
+    - name: Young&Co'sBreweryPlc
+      symbol: YNGN.LON
+  - ftseSmallCap:
+    - name: McCollsRetailGroupplc
+      symbol: MCLS.LON
+    - name: Brown(N)Groupplc
+      symbol: BWNG.LON
+    - name: KellerGroup
+      symbol: KLR.LON
+    - name: KCOMGroupplc
+      symbol: KCOM.LON
+    - name: RenewiPlc
+      symbol: RWI.LON
+    - name: Carpetrightplc
+      symbol: CPR.LON
+    - name: Reachplc
+      symbol: RCH.LON
+    - name: ClipperLogisticsplc
+      symbol: CLG.LON
+    - name: Ricardoplc
+      symbol: RCDO.LON
+    - name: Dialightplc
+      symbol: DIA.LON
+    - name: 4imprintGroupplc
+      symbol: FOUR.LON
+    - name: MedicaGroupplc
+      symbol: MGP.LON
+    - name: Devroplc
+      symbol: DVO.LON
+    - name: Biffaplc
+      symbol: BIFF.LON
+    - name: TTElectronicsplc
+      symbol: TTG.LON
+    - name: NCCGroupplc
+      symbol: NCC.LON
+    - name: Trifast
+      symbol: TRI.LON
+    - name: KainosGroupplc
+      symbol: KNOS.LON
+    - name: MJGleesonplc
+      symbol: GLE.LON
+    - name: XPPowerLimited
+      symbol: XPP.LON
+    - name: TarsusGroupPlc
+      symbol: TRS.LON
+    - name: RpsGroupplc
+      symbol: RPS.LON
+    - name: JTCPlc
+      symbol: JTC.LON
+    - name: LindsellTrainInvestmentTrustplc(The)
+      symbol: LTI.LON
+    - name: OxfordInstrumentsplc
+      symbol: OXIG.LON
+    - name: XPSPensionsGroupPlc
+      symbol: XPS.LON
+    - name: HostelworldGroupplc
+      symbol: HSW.LON
+    - name: GymGroupplc
+      symbol: GYM.LON
+    - name: LamprellPlc
+      symbol: LAM.LON
+    - name: FoxtonsGroupplc
+      symbol: FOXT.LON
+    - name: StandardLifeUKSmallerCompaniesTrustplc
+      symbol: SLS.LON
+    - name: PuretechHealthplc
+      symbol: PRTC.LON
+    - name: PaypointPlc
+      symbol: PAY.LON
+    - name: Porvairplc
+      symbol: PRV.LON
+    - name: River&MercantileGroupplc
+      symbol: RIV.LON
+    - name: MacFarlaneGroupplc
+      symbol: MACF.LON
+    - name: GoCompare.comPlc
+      symbol: GOCO.LON
+    - name: HeadlamGroupplc
+      symbol: HEAD.LON
+    - name: VolutionGroupplc
+      symbol: FAN.LON
+    - name: LiontrustAssetManagement
+      symbol: LIO.LON
+    - name: ToppsTilesplc
+      symbol: TPT.LON
+    - name: Chesnaraplc
+      symbol: CSN.LON
+    - name: MorganSindallGroupPlc
+      symbol: MGNS.LON
+    - name: BATMAdvancedCommunicationsLtd
+      symbol: BVC.LON
+    - name: Severfieldplc
+      symbol: SFR.LON
+    - name: BlackRockThrogmortonTrustplc
+      symbol: THRG.LON
+    - name: HarworthGroupplc
+      symbol: HWG.LON
+    - name: AOWorldplc
+      symbol: AO..LON
+    - name: StrategicEquityCapitalplc
+      symbol: SEC.LON
+    - name: LXIREITplc
+      symbol: LXI.LON
+    - name: DFSFurniturePlc
+      symbol: DFS.LON
+    - name: AvonRubberplc
+      symbol: AVON.LON
+    - name: Wincanton
+      symbol: WIN.LON
+    - name: MontanaroEuropeanSmallerCompaniesTrustplc
+      symbol: MTE.LON
+    - name: CityofLondonInvestmentGroupplc
+      symbol: CLIG.LON
+    - name: InvescoPerpetualUKSmallerCosInvTst
+      symbol: IPU.LON
+    - name: FidelityJapanTrustplc
+      symbol: FJV.LON
+    - name: ITEGroupplc
+      symbol: ITE.LON
+    - name: JPMorganJapanSmallerCompaniesTrustplc
+      symbol: JPS.LON
+    - name: JPMorganChineseInvestmentTrustplc
+      symbol: JMC.LON
+    - name: PictonPropertyIncomeLimited
+      symbol: PCTN.LON
+    - name: ChemringGroupplc
+      symbol: CHG.LON
+    - name: MartinCurrieGlobalPortfolioTrust
+      symbol: MNP.LON
+    - name: AllianzTechnologyTrust
+      symbol: ATT.LON
+    - name: Norcrosplc
+      symbol: NXR.LON
+    - name: RobertWaltersplc
+      symbol: RWA.LON
+    - name: HendersonSmallerCosInvestmentTrustplc
+      symbol: HSL.LON
+    - name: ImpaxEnvironmentalMarketsplc
+      symbol: IEM.LON
+    - name: RegionalREITLtd
+      symbol: RGL.LON
+    - name: MitieGroup
+      symbol: MTO.LON
+    - name: Forterraplc
+      symbol: FORT.LON
+    - name: ForesightSolarFundLtd
+      symbol: FSFL.LON
+    - name: BaillieGiffordUKGrowthFund
+      symbol: BGUK.LON
+    - name: MurrayIncomeTrustplc
+      symbol: MUT.LON
+    - name: AberdeenNewIndiaInvestmentTrust
+      symbol: ANII.LON
+    - name: JPMorganSmallerCompaniesInvestmentTrustPlc
+      symbol: JMI.LON
+    - name: AlliedMindsplc
+      symbol: ALM.LON
+    - name: JohnLaingEnvironmentalAssetGroup
+      symbol: JLEN.LON
+    - name: BaillieGiffordUSGrowthTrust
+      symbol: USA.LON
+    - name: NorthAtlanticSmallerCosInvTst
+      symbol: NAS.LON
+    - name: MontanaroUkSmallerCosInvestmTr
+      symbol: MTU.LON
+    - name: STVGroupplc
+      symbol: STVG.LON
+    - name: OphirEnergyplc
+      symbol: OPHR.LON
+    - name: BlackRockGreaterEuropeInvestmentTrust
+      symbol: BRGE.LON
+    - name: MidWyndInternationalInvestmentTrustPlc
+      symbol: MWY.LON
+    - name: ICGEnterpriseTrustplc
+      symbol: ICGT.LON
+    - name: DunedinIncomeGrowthInvestmentTrust
+      symbol: DIG.LON
+    - name: AberforthSplitLevelIncomeTrustplc
+      symbol: ASIT.LON
+    - name: EdistonPropertyInvestmentCompanyplc
+      symbol: EPIC.LON
+    - name: Boot(Henry)plc
+      symbol: BOOT.LON
+    - name: HendersonDiversifiedIncome
+      symbol: HDIV.LON
+    - name: BloomsburyPublishingplc
+      symbol: BMY.LON
+    - name: StandardLifePrivateEquityTrustplc
+      symbol: SLPE.LON
+    - name: OxfordBiomedicaplc
+      symbol: OXB.LON
+    - name: GCPStudentLivingplc
+      symbol: DIGS.LON
+    - name: SchroderUKMidCapFund
+      symbol: SCP.LON
+    - name: Marstonsplc
+      symbol: MARS.LON
+    - name: PrincessPrivateEquityHoldings
+      symbol: PEYS.LON
+    - name: GCPAssetBackedIncomeFundLimited
+      symbol: GABI.LON
+    - name: JPMorganRussianSecurities
+      symbol: JRS.LON
+    - name: TymanPlc
+      symbol: TYMN.LON
+    - name: BMOCapitalandIncomeInvTrust
+      symbol: BCI.LON
+    - name: MiddlefieldCanadianInc-GBPPC
+      symbol: MCT.LON
+    - name: CQSNewCityHighYieldFundLtd
+      symbol: NCYF.LON
+    - name: ResidentialSecureIncomeREIT
+      symbol: RESI.LON
+    - name: EdinburghDragonTrustplc
+      symbol: EFM.LON
+    - name: HendersonEurotrustplc
+      symbol: HNE.LON
+    - name: P2PGlobalInvestmentsplc
+      symbol: P2P.LON
+    - name: ArrowGlobalGroupplc
+      symbol: ARW.LON
+    - name: PhoenixSpreeDeutschlandLtd
+      symbol: PSDL.LON
+  - techmark:
+    - name: AptitudeSoftwareGroup
+      symbol: APTD.LON
+    - name: AVEVAGroupplc
+      symbol: AVV.LON
+    - name: BAESystemsplc
+      symbol: BA..LON
+    - name: BATMAdvancedCommunicationsLtd
+      symbol: BVC.LON
+    - name: BTGplc
+      symbol: BTG.LON
+    - name: Cobhamplc
+      symbol: COB.LON
+    - name: Computacenterplc
+      symbol: CCC.LON
+    - name: ConsortMedicalplc
+      symbol: CSRT.LON
+    - name: Dialightplc
+      symbol: DIA.LON
+    - name: Genusplc
+      symbol: GNS.LON
+    - name: GreshamTechnologiesplc
+      symbol: GHT.LON
+    - name: KCOMGroupplc
+      symbol: KCOM.LON
+    - name: Meggitt
+      symbol: MGGT.LON
+    - name: MicroFocusInternationalplc
+      symbol: MCRO.LON
+    - name: NCCGroupplc
+      symbol: NCC.LON
+    - name: OxfordBiomedicaplc
+      symbol: OXB.LON
+    - name: OxfordInstrumentsplc
+      symbol: OXIG.LON
+    - name: PaddyPowerBetfairplc
+      symbol: PPB.LON
+    - name: QinetiQGroupplc
+      symbol: QQ..LON
+    - name: Renishawplc
+      symbol: RSW.LON
+    - name: Ricardoplc
+      symbol: RCDO.LON
+    - name: SageGroupplc
+      symbol: SGE.LON
+    - name: SDLplc
+      symbol: SDL.LON
+    - name: Smith&Nephewplc
+      symbol: SN..LON
+    - name: Spectrisplc
+      symbol: SXS.LON
+    - name: SpirentCommunicationsplc
+      symbol: SPT.LON
+    - name: TriadGroupplc
+      symbol: TRD.LON
+    - name: UltraElectronicsHoldings
+      symbol: ULE.LON
+    - name: VecturaGroup
+      symbol: VEC.LON
+    - name: Xaar
+      symbol: XAR.LON
+    - name: XPPowerLimited
+      symbol: XPP.LON
+  - ftseallshare:
+    - name: AJBellPlc
+      symbol: AJB.LON
+    - name: McCollsRetailGroupplc
+      symbol: MCLS.LON
+    - name: Brown(N)Groupplc
+      symbol: BWNG.LON
+    - name: IWGplc
+      symbol: IWG.LON
+    - name: KellerGroup
+      symbol: KLR.LON
+    - name: InmarsatPlc
+      symbol: ISAT.LON
+    - name: OcadoGroupplc
+      symbol: OCDO.LON
+    - name: KCOMGroupplc
+      symbol: KCOM.LON
+    - name: RenewiPlc
+      symbol: RWI.LON
+    - name: HargreavesLansdownplc
+      symbol: HL..LON
+    - name: Carpetrightplc
+      symbol: CPR.LON
+    - name: GamesWorkshopGroup
+      symbol: GAW.LON
+    - name: Reachplc
+      symbol: RCH.LON
+    - name: ClipperLogisticsplc
+      symbol: CLG.LON
+    - name: Ricardoplc
+      symbol: RCDO.LON
+    - name: JDSportsFashionplc
+      symbol: JD..LON
+    - name: Dialightplc
+      symbol: DIA.LON
+    - name: 4imprintGroupplc
+      symbol: FOUR.LON
+    - name: MedicaGroupplc
+      symbol: MGP.LON
+    - name: MarshallsPlc
+      symbol: MSLH.LON
+    - name: SanneGroupplc
+      symbol: SNN.LON
+    - name: Devroplc
+      symbol: DVO.LON
+    - name: TalktalkTelecomGroupPlc
+      symbol: TALK.LON
+    - name: AutoTraderGroupplc
+      symbol: AUTO.LON
+    - name: Softcatplc
+      symbol: SCT.LON
+    - name: Biffaplc
+      symbol: BIFF.LON
+    - name: FirstGroupplc
+      symbol: FGP.LON
+    - name: TTElectronicsplc
+      symbol: TTG.LON
+    - name: UltraElectronicsHoldings
+      symbol: ULE.LON
+    - name: NCCGroupplc
+      symbol: NCC.LON
+    - name: Trifast
+      symbol: TRI.LON
+    - name: ContourGlobalplc
+      symbol: GLO.LON
+    - name: CharterCourtFinancialServicesGroupplc
+      symbol: CCFS.LON
+    - name: Spirax-SarcoEngineeringplc
+      symbol: SPX.LON
+    - name: EnergeanOil&Gas
+      symbol: ENOG.LON
+    - name: GraftonGroup
+      symbol: GFTU.LON
+    - name: KainosGroupplc
+      symbol: KNOS.LON
+    - name: FDMGroupplc
+      symbol: FDM.LON
+    - name: MJGleesonplc
+      symbol: GLE.LON
+    - name: XPPowerLimited
+      symbol: XPP.LON
+    - name: PremierOilPlc
+      symbol: PMO.LON
+    - name: Diplomaplc
+      symbol: DPLM.LON
+    - name: TarsusGroupPlc
+      symbol: TRS.LON
+    - name: RpsGroupplc
+      symbol: RPS.LON
+    - name: JTCPlc
+      symbol: JTC.LON
+    - name: LindsellTrainInvestmentTrustplc(The)
+      symbol: LTI.LON
+    - name: OxfordInstrumentsplc
+      symbol: OXIG.LON
+    - name: XPSPensionsGroupPlc
+      symbol: XPS.LON
+    - name: DunelmGroupPlc
+      symbol: DNLM.LON
+    - name: HostelworldGroupplc
+      symbol: HSW.LON
+    - name: Sigplc
+      symbol: SHI.LON
+    - name: B&MEuropeanValueRetailSA
+      symbol: BME.LON
+    - name: QuilterPlc
+      symbol: QLT.LON
+    - name: Halmaplc
+      symbol: HLMA.LON
+    - name: GymGroupplc
+      symbol: GYM.LON
+    - name: Rightmoveplc
+      symbol: RMV.LON
+    - name: LamprellPlc
+      symbol: LAM.LON
+    - name: GreencoreGroupplc
+      symbol: GNC.LON
+    - name: HiltonFoodGroupPlc
+      symbol: HFG.LON
+    - name: MicroFocusInternationalplc
+      symbol: MCRO.LON
+    - name: CineworldGroupplc
+      symbol: CINE.LON
+    - name: BBAAviationplc
+      symbol: BBA.LON
+    - name: TBCBankGroupPlc
+      symbol: TBCG.LON
+    - name: GreggsPlc
+      symbol: GRG.LON
+    - name: StJames'sPlacePlc
+      symbol: STJ.LON
+    - name: WPPplc
+      symbol: WPP.LON
+    - name: FoxtonsGroupplc
+      symbol: FOXT.LON
+    - name: StandardLifeUKSmallerCompaniesTrustplc
+      symbol: SLS.LON
+    - name: PetsAtHomeGroupPLC
+      symbol: PETS.LON
+    - name: IntegrafinHoldingsPlc
+      symbol: IHP.LON
+    - name: PrimaryHealthPropertiesplc
+      symbol: PHP.LON
+    - name: OneSavingsBankplc
+      symbol: OSB.LON
+    - name: IntermediateCapitalGroupplc
+      symbol: ICP.LON
+    - name: LancashireHoldings
+      symbol: LRE.LON
+    - name: 3iGroupPlc
+      symbol: III.LON
+    - name: PuretechHealthplc
+      symbol: PRTC.LON
+    - name: Hill&SmithHoldingsplc.
+      symbol: HILS.LON
+    - name: Nextplc
+      symbol: NXT.LON
+    - name: PaypointPlc
+      symbol: PAY.LON
+    - name: JupiterEuropeanOpportunitiesTrust
+      symbol: JEO.LON
+    - name: Porvairplc
+      symbol: PRV.LON
+    - name: PageGroupplc
+      symbol: PAGE.LON
+    - name: River&MercantileGroupplc
+      symbol: RIV.LON
+    - name: TIFluidSystemsplc
+      symbol: TIFS.LON
+    - name: EntertainmentOneLtd
+      symbol: ETO.LON
+    - name: MacFarlaneGroupplc
+      symbol: MACF.LON
+    - name: GoCompare.comPlc
+      symbol: GOCO.LON
+    - name: Barr(A.G.)
+      symbol: BAG.LON
+    - name: Moneysupermarket.Com
+      symbol: MONY.LON
+    - name: Homeserveplc
+      symbol: HSV.LON
+    - name: Schrodersplc
+      symbol: SDR.LON
+    - name: ParagonBankingGroupplc
+      symbol: PAG.LON
+    - name: DechraPharmaceuticalsplc
+      symbol: DPH.LON
+    - name: HeadlamGroupplc
+      symbol: HEAD.LON
+    - name: HeraldInvestmentTrust
+      symbol: HRI.LON
+    - name: Aggrekoplc
+      symbol: AGK.LON
+    - name: AVEVAGroupplc
+      symbol: AVV.LON
+    - name: SafestoreHoldings
+      symbol: SAFE.LON
+    - name: BigYellowGroup
+      symbol: BYG.LON
+    - name: VolutionGroupplc
+      symbol: FAN.LON
+    - name: JPMorganJapaneseInvestmentTrust
+      symbol: JFJ.LON
+    - name: LiontrustAssetManagement
+      symbol: LIO.LON
+    - name: LondonStockExchangeGroupplc
+      symbol: LSE.LON
+    - name: ToppsTilesplc
+      symbol: TPT.LON
+    - name: BlackRockSmallerCompaniesTrust
+      symbol: BRSC.LON
+    - name: Chesnaraplc
+      symbol: CSN.LON
+    - name: SageGroupplc
+      symbol: SGE.LON
+    - name: MorganSindallGroupPlc
+      symbol: MGNS.LON
+    - name: UniteGroup
+      symbol: UTG.LON
+    - name: Smith&Nephewplc
+      symbol: SN..LON

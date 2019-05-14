@@ -36,7 +36,7 @@ func (s *SymbolGroups) symbols(yml string) (error){
 	return nil
 }
 
-func es(stock_symbol string) error{
+func es(stock_symbol string) (bool, error){
 
 	/*
 	ES index prefix and field to use
@@ -44,6 +44,7 @@ func es(stock_symbol string) error{
 	index_name_prefix := "/" + strings.ToLower(strings.Replace(stock_symbol, ":", "_", -1))
 	index_field := "/stock/"
 	var index_name string
+	shouldWatch := false
 
 	/*
 		Time Series
@@ -51,7 +52,7 @@ func es(stock_symbol string) error{
 	 ts,err := getTimeSeries(stock_symbol)
 	 if err != nil {
 		 time.Sleep(60 * time.Second)
-		 return err
+		 return shouldWatch, err
 	 }
 	 index_name = index_name_prefix + "-ts" + index_field
 
@@ -61,7 +62,7 @@ func es(stock_symbol string) error{
 	sma50, err := getSimpleMovingAv(stock_symbol, 50)
 	if err != nil {
 		time.Sleep(60 * time.Second)
-		return err
+		return shouldWatch, err
 	}
 	index_name = index_name_prefix + "-sma50" + index_field
 
@@ -71,7 +72,7 @@ func es(stock_symbol string) error{
 	sma15, err := getSimpleMovingAv(stock_symbol, 15)
 	if err != nil {
 		time.Sleep(60 * time.Second)
-		return err
+		return shouldWatch, err
 	}
 	index_name = index_name_prefix + "-sma15" + index_field
 
@@ -81,11 +82,34 @@ func es(stock_symbol string) error{
 		symbols.
 	 */
 	 smaData,err := getSMAData(*ts,*sma50, *sma15)
+
+	 for _, sma := range(smaData.Data){
+		 dateLayout := "2006-01-02"
+	 	t, err := time.Parse(dateLayout, sma.Date)
+	 	if err != nil{
+	 		fmt.Println("Unable to parse date, skipping " + sma.Date )
+	 		continue
+		}
+	 	fmt.Println("Checking time: " + t.String())
+	 	fmt.Println("with :" + time.Now().Add(-72*time.Hour).String())
+	 	if t.After(time.Now().Add(-96*time.Hour)){
+	 		if sma.SMA50Day >= sma.Close && sma.Close > sma.SMA15Day{
+				fmt.Println("Found a watcher: " + stock_symbol)
+				shouldWatch = true
+			} else if sma.Close >= sma.SMA50Day && sma.SMA50Day > sma.SMA15Day{
+				fmt.Println("Found a watcher: " + stock_symbol)
+				shouldWatch = true
+			}
+
+		}
+
+	 }
+
 	 handle(err)
 	 err = smaData.Send(index_name, 10)
 	 handle(err)
 
-	 return nil
+	 return shouldWatch,nil
 }
 
 func from_arg(){
@@ -118,24 +142,30 @@ func from_yaml(symbolsFile string, section string){
 	var s SymbolGroups
 	err := s.symbols(symbolsFile)
 	handle(err)
+	var watching []string
 
 	for _,group := range s.Groups{
 		for groupName,symbols := range group {
 			if groupName == section {
+				watching = nil
 				for _,ea := range symbols {
 					fmt.Println(groupName)
+
 					/*
 					Run the stock
 					*/
-					err = es(ea.Symbol)
+					shouldWatch, err := es(ea.Symbol)
 					if err != nil {
 						continue
+					}
+					if shouldWatch {
+						watching = append(watching, ea.Symbol)
 					}
 
 					/*
 					Index
 					*/
-					err := createIndex(ea.Symbol)
+					err = createIndex(ea.Symbol)
 					handle(err)
 
 					/*
@@ -149,6 +179,11 @@ func from_yaml(symbolsFile string, section string){
 					*/
 					time.Sleep(60 * time.Second)
 				}
+				watchDash := groupName + "_Watching"
+				fmt.Println(watchDash)
+				fmt.Println(watching)
+				err = createDashBoard(watchDash, &watching)
+				handle(err)
 			}
 		}
 
@@ -187,6 +222,11 @@ func main()  {
 	case "symbol":
 		from_arg()
 	case "dashonly":
+		dashboards_from_yaml(os.Args[2])
+	case "all":
+		from_yaml(os.Args[2], "fav")
+		from_yaml(os.Args[2], "ftse100")
+		from_yaml(os.Args[2], "nasdaq")
 		dashboards_from_yaml(os.Args[2])
 	default:
 		from_yaml(os.Args[1], os.Args[2])
