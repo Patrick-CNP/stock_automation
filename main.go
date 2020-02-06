@@ -226,6 +226,10 @@ func main()  {
 	case "all":
 		from_yaml(os.Args[2], "fav")
 		from_yaml(os.Args[2], "ftse100")
+		from_yaml(os.Args[2], "ftse_aim")
+		from_yaml(os.Args[2], "ftseSmallCap")
+		from_yaml(os.Args[2], "techmark")
+		from_yaml(os.Args[2], "ftseallshare")
 		from_yaml(os.Args[2], "nasdaq")
 		dashboards_from_yaml(os.Args[2])
 	default:

@@ -115,31 +115,6 @@ groups:
       symbol: IQ
     - name: Pz Cussons
       symbol: PZC.LON
-  - watching:
-    - name: Carnival Corporation & plc
-      symbol: CCL.LON
-    - name: Coca-Cola HBC
-      symbol: CCH.LON
-    - name: easyJet
-      symbol: EZJ.LON
-    - name: International Airlines Group
-      symbol: IAG.LON
-    - name: ITV plc
-      symbol: ITV.LON
-    - name: NMC Health
-      symbol: NMC.LON
-    - name: Persimmon plc
-      symbol: PSN.LON
-    - name: Ryanair Holdings
-      symbol: RYA.LON
-    - name: Petrofac Ltd
-      symbol: PFC.LON
-    - name: SONOS INC
-      symbol: SONO
-    - name: TUI
-      symbol: TUI.LON
-    - name: Entertainment One
-      symbol: ETO.LON
   - ftse100:
     - name: 3i
       symbol: III.LON
